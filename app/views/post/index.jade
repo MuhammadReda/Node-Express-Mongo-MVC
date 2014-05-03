@@ -1,0 +1,15 @@
+extends ../layout
+
+block content
+    h1= title
+
+    p
+        if posts.length > 0
+            ul
+                each value, index in posts
+                    li= value.title
+        else
+            | No posts found.
+
+    p
+        a(href='/') Back to homepage

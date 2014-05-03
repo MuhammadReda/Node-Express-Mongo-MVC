@@ -15,10 +15,6 @@ module.exports = function (grunt) {
         },
 
         watch: {
-//            options: {
-//                nospawn: true,
-//                livereload: reloadPort
-//            },
             js: {
                 files: [
                     'app.js',
@@ -35,6 +31,14 @@ module.exports = function (grunt) {
                 files: ['public/scss/*.scss'],
                 tasks: ['compass', 'develop']
             }
+        },
+
+        compass: {
+            dist: {
+                options: {
+                    config: 'config.rb'
+                }
+            }
         }
     });
 
@@ -44,6 +48,5 @@ module.exports = function (grunt) {
     files = grunt.file.expand(files);
 
 
-    //grunt.registerTask('default', ['compass', 'develop', 'watch']);
-    grunt.registerTask('default', ['develop', 'watch']);
+    grunt.registerTask('default', ['compass', 'develop', 'watch']);
 };

@@ -1,0 +1,28 @@
+{
+  "name": "node-express-mongo-mvc",
+  "main": "index.js",
+  "version": "1.0.0",
+  "homepage": "https://github.com/MuhammadReda/Node-Express-Mongo-MVC",
+  "authors": [
+    "Muhammad Reda <say.hello@mreda.net>"
+  ],
+  "description": "MVC application structure for NodeJs using Express 4.1+ and MongoDB",
+  "moduleType": [
+    "node"
+  ],
+  "keywords": [
+    "express",
+    "mongodb",
+    "mongoose",
+    "mvc",
+    "jade"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "public/bower_components",
+    "test",
+    "tests"
+  ]
+}

@@ -17,7 +17,7 @@
     "mvc"
   ],
   "author": "Muhammad Reda <say.hello@mreda.net>",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/MuhammadReda/Node-Express-Mongo-MVC/issues"
   },

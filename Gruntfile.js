@@ -1,9 +1,13 @@
 'use strict';
-var request = require('request');
-
 module.exports = function (grunt) {
     require('time-grunt')(grunt);
     require('load-grunt-tasks')(grunt);
+
+    var files,
+        watchOptions = {
+            nospawn: true,
+            livereload: true
+        };
 
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
@@ -21,15 +25,18 @@ module.exports = function (grunt) {
                     'app/**/*.js',
                     'config/*.js'
                 ],
-                tasks: ['develop']
+                tasks: ['develop'],
+                options: watchOptions
             },
             jade: {
                 files: ['app/views/**/*.jade'],
-                tasks: ['develop']
+                tasks: ['develop'],
+                options: watchOptions
             },
             scss: {
                 files: ['public/scss/*.scss'],
-                tasks: ['compass', 'develop']
+                tasks: ['compass', 'develop'],
+                options: watchOptions
             }
         },
 
@@ -42,7 +49,10 @@ module.exports = function (grunt) {
         }
     });
 
-    var files;
+    grunt.event.on('watch', function(action, filepath, target) {
+        grunt.log.writeln(target + ': ' + filepath + ' has ' + action);
+    });
+
     grunt.config.requires('watch.js.files');
     files = grunt.config('watch.js.files');
     files = grunt.file.expand(files);
